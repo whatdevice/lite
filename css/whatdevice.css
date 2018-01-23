@@ -34,11 +34,20 @@ a:hover {
 	text-align: center;
 }
 
+.container {
+	padding: 15px;
+}
+
 .panel {
-	margin: 15px;
 	background-color: #ffffff;
 	border: 1px solid #ecf0f1;
 	border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	-webkit-border-radius: 4px;
+	-moz-border-radius: 4px;
+	margin-bottom: 15px;
+	behavior: url(css/PIE.htc);
 }
 
 .panel .panel-title {

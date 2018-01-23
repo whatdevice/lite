@@ -1,2 +1,5 @@
-# whatdevice-classic
-WhatDevice for older browsers (IE 8 and below)
+# WhatDevice Lite
+
+This is a custom version of WhatDevice, designed to run on legacy browsers or basic WAP browsers. It has been tested to work on Internet Explorer 5, 7, and 8 (through IE11's compatibility mode) as well as Opera Mini.
+
+WhatDevice Lite uses components from [Progressive Internet Explorer](https://github.com/lojjic/PIE). The favicon came from [Iconfinder](https://www.iconfinder.com/icons/45175/cpu_fan_icon).

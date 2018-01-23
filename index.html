@@ -6,7 +6,12 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
-        <link href="styles.css" rel="stylesheet">
+        <link href="css/whatdevice.css" rel="stylesheet">
+        <!-- Fix for PIE rounded corners hack removing pading on panel elements -->
+        <!--[if lte IE 7]>
+            <style> .panel {padding-bottom: 15px; } </style>
+        <![endif]-->
+        <!-- Fix for 100% width table not working on IE6 -->
         <!--[if lte IE 6]>
             <style> table {width: auto !important} </style>
         <![endif]-->
@@ -15,36 +20,40 @@
         <div class="header">WhatDevice Lite</div>
         <div class="sub-header"><a href="javascript:alert('This is not supported on WhatDevice Lite yet.')">Click here to share results</a></div>
 
-        <div class="panel">
-            <div class="panel-title">About WhatDevice</div>
-            <div class="body">
-                <p>WhatDevice is a web app designed to show information about your computer, tablet, phone, or other internet-connected device. You're using <b>WhatDevice Lite</b>, a custom version designed to run on legacy browsers (like Internet Explorer 8 and below) or basic WAP browsers.</p>
-                <p>If you're using a recent browser, please use <a href="http://what-device.com">the full version</a> instead.</p>
+        <div class="container">
+
+            <div class="panel">
+                <div class="panel-title">About WhatDevice</div>
+                <div class="body">
+                    <p>WhatDevice is a web app designed to show information about your computer, tablet, phone, or other internet-connected device. You're using <b>WhatDevice Lite</b>, a custom version designed to run on legacy browsers (like Internet Explorer 8 and below) or basic WAP browsers.</p>
+                    <p>If you're using a recent browser, please use <a href="http://what-device.com">the full version</a> instead.</p>
+                </div>
             </div>
+
+            <div class="panel">
+                <div class="panel-title">Device</div>
+                <div class="body" id="device">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">Browser</div>
+                <div class="body" id="browser">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-title">Plugins</div>
+                <div class="body" id="plugins">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
         </div>
 
-        <div class="panel">
-            <div class="panel-title">Device</div>
-            <div class="body" id="device">
-                <p>Loading...</p>
-            </div>
-        </div>
-
-        <div class="panel">
-            <div class="panel-title">Browser</div>
-            <div class="body" id="browser">
-                <p>Loading...</p>
-            </div>
-        </div>
-
-        <div class="panel">
-            <div class="panel-title">Plugins</div>
-            <div class="body" id="plugins">
-                <p>Loading...</p>
-            </div>
-        </div>
-
-        <script src="platform.js"></script>
-        <script src="stats.js"></script>
+        <script src="js/platform.js"></script>
+        <script src="js/stats.js"></script>
     </body>
 </html>
