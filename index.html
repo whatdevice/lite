@@ -1,1 +1,50 @@
-Coming soon!
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="robots" content="noindex">
+        <title>WhatDevice Lite</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" type="image/x-icon" href="favicon.ico" />
+        <link href="styles.css" rel="stylesheet">
+        <!--[if lte IE 6]>
+            <style> table {width: auto !important} </style>
+        <![endif]-->
+    </head>
+    <body>
+        <div class="header">WhatDevice Lite</div>
+
+        <div class="panel">
+            <div class="panel-title">About WhatDevice</div>
+            <div class="body">
+                <p>WhatDevice is a web app designed to show information about your computer, tablet, phone, or other internet-connected device. It does all this through the magic of JavaScript - you don't have to download any programs or apps!</p>
+                <p>You're using <b>WhatDevice Lite</b>, a custom version of WhatDevice designed to run on legacy browsers (like Internet Explorer 8 and below) or basic WAP browsers (like Opera Mini). If you're using a recent browser, please use <a href="http://what-device.com">the full version</a> instead.</p>
+                <p>The ability to share a report is coming soon!</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Device</div>
+            <div class="body" id="device">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Browser</div>
+            <div class="body" id="browser">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <div class="panel">
+            <div class="panel-title">Plugins</div>
+            <div class="body" id="plugins">
+                <p>Loading...</p>
+            </div>
+        </div>
+
+        <script src="platform.js"></script>
+        <script src="stats.js"></script>
+    </body>
+</html>
