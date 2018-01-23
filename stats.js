@@ -33,6 +33,8 @@ function printDeviceInfo() {
 	// Operating system
 	if (platform.os) {
 		content += "<p><b>Operating system: </b> " + platform.os + "</p>";
+	} else if (platform.os == null) {
+		content += "<p><b>Operating system: </b> Unknown</p>";
 	} else {
 		content += "<p><b>Operating system: </b> Unknown</p>";
 	}
