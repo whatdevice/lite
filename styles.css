@@ -11,12 +11,27 @@ body {
 	color: #2c3e50;
 }
 
+a {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
 .header {
 	background: #18bc9c;
 	color: #FFFFFF;
 	font-size: 19px;
 	line-height: 60px;
 	padding-left: 15px;
+}
+
+.sub-header {
+	background-color: #ecf0f1;
+	font-size: 18px;
+	padding: 10px;
+	text-align: center;
 }
 
 .panel {
