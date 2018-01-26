@@ -53,11 +53,12 @@ a:hover {
 .panel .panel-title {
 	background-color: #ecf0f1;
 	padding: 10px 15px;
-	font-weight: bold;
 }
 
 .panel .title {
 	font-size: 36px;
+	margin-bottom: 0px;
+	margin-top: 15px;
 }
 
 .panel .body {
