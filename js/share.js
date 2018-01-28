@@ -63,7 +63,25 @@ function createReport(format) {
 	// Device info
 	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\n\n";
 	// Browser info
-    report += "-- BROWSER INFO --\nBrowser: " + platform.name + " " + platform.version + "\nRendering engine: " + platform.layout + "\nCookies enabled: " + navigator.cookieEnabled + "\nUser agent string: " + navigator.userAgent + "\n\n";
+	report += "-- BROWSER INFO --\nBrowser: " + platform.name + " " + platform.version + "\nRendering engine: " + platform.layout + "\nCookies enabled: " + navigator.cookieEnabled + "\nUser agent string: " + navigator.userAgent + "\n\n";
+	// Plugin info
+	report += "-- PLUGIN INFO --\n"
+	if (navigator.plugins.length == 0) {
+		report += "No plugins were detected.\n"
+	} else {
+		var x = navigator.plugins.length;
+		report += "Plugins list:\n";
+		// Generate list
+		for (var i = 0; i < x; i++) {
+			if (navigator.plugins[i].version == null) {
+				var version = "unknown"
+			} else {
+				var version = navigator.plugins[i].version
+			}
+			report += "- " + navigator.plugins[i].name + ", version " + version + "\n"; 
+		}
+		report += "\n"
+	}
     // If report is requested in HTML format, replace line breaks with <br> tag
     if (format == "html") {
         var find = "\n";

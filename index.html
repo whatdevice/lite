@@ -7,20 +7,29 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <link href="css/whatdevice.css" rel="stylesheet">
-        <!-- Fix for PIE rounded corners hack removing pading on panel elements -->
+        <!-- Fix for PIE rounded corners hack removing pading -->
         <!--[if lte IE 7]>
-            <style> .panel {padding-bottom: 15px; } </style>
+            <style>
+                .panel {margin-bottom: 15px; padding-bottom: 15px;}
+                .share-button {margin-top: 60px !important;}
+            </style>
         <![endif]-->
-        <!-- Fix for 100% width table not working on IE6 -->
+        <!-- Fix for 100% width table and fixed top bar not working on IE6 -->
         <!--[if lte IE 6]>
-            <style> table {width: auto !important} </style>
+            <style>
+                table {width: auto !important}
+                .header {position: static !important}
+                .container {margin-top: 0 !important}
+                .share-button {margin-top: auto !important;}
+            </style>
         <![endif]-->
     </head>
     <body>
         <div class="header">WhatDevice Lite</div>
-        <div class="sub-header"><a href="share.html">Click here to share results</a></div>
 
         <div class="container">
+
+            <a class="button share-button" href="share.html">Share or save results</a>
 
             <div class="panel">
                 <div class="panel-title">About WhatDevice</div>

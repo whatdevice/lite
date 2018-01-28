@@ -9,6 +9,7 @@ body {
 	padding: 0;
 	font-size: 15px;
 	color: #2c3e50;
+	text-align: center;
 }
 
 a {
@@ -19,23 +20,48 @@ a:hover {
 	text-decoration: underline;
 }
 
+.button {
+	color: #ffffff;
+	background-color: #95a5a6;
+	border-color: #95a5a6;
+	border-width: 2px;
+	line-height: 38px;
+	padding: 0px 15px;
+	text-align: center;
+	border-radius: 4px;
+	behavior: url(css/PIE.htc);
+	display: inline-block;
+}
+
+.button:hover {
+	color: #ffffff;
+	background-color: #798d8f;
+	text-decoration: none !important;
+}
+
+.share-button {
+	width: 100%;
+	padding: 0 !important;
+}
+
 .header {
 	background: #18bc9c;
+	position: fixed;
+	left: 0px;
+	right: 0px;
 	color: #FFFFFF;
 	font-size: 19px;
 	line-height: 60px;
 	padding-left: 15px;
-}
-
-.sub-header {
-	background-color: #ecf0f1;
-	font-size: 18px;
-	padding: 10px;
-	text-align: center;
+	text-align: left;
 }
 
 .container {
+	max-width: 800px;
 	padding: 15px;
+	display: inline-block;
+	text-align: left !important;
+	margin-top: 60px;
 }
 
 .panel {
@@ -46,7 +72,7 @@ a:hover {
 	-moz-border-radius: 4px;
 	-webkit-border-radius: 4px;
 	-moz-border-radius: 4px;
-	margin-bottom: 15px;
+	margin-top: 15px;
 	behavior: url(css/PIE.htc);
 }
 

@@ -62,9 +62,9 @@ function printBrowserInfo() {
 	content += "<p><b>User agent:</b> " + navigator.userAgent + "</p>";
 	// Buttons
 	if (platform.name === "Chrome") {
-		content += "<p><a href='https://support.google.com/chrome/answer/95414' target='_blank'><button type='button' class='btn btn-default'>Check for browser updates</button></a></p>"
+		content += "<p><a class='button' href='https://support.google.com/chrome/answer/95414' target='_blank'>Check for browser updates</a></p>"
 	} else if (platform.name === "Firefox") {
-		content += "<p><a href='https://support.mozilla.org/en-US/kb/update-firefox-latest-version' target='_blank'><button type='button' class='btn btn-default'>Check for browser updates</button></a></p>"
+		content += "<p><a class='button' href='https://support.mozilla.org/en-US/kb/update-firefox-latest-version' target='_blank'>Check for browser updates</a></p>"
 	}
 	// Write data to page
 	document.getElementById("browser").innerHTML = content;
@@ -81,9 +81,13 @@ function printPluginInfo() {
 		content += "<p><b>Total plugins installed:</b> " + x + "</p>";
 		// Generate table
 		content += "<p><table cellpadding=10 cellspacing=0 width=100%><tr><th>Plugin</th><th>Version</th></tr>"
-		for(var i=0;i<x;i++)
-		{
-		  content += "<tr><td>" + navigator.plugins[i].name + "</td><td>" + navigator.plugins[i].version + "</td></tr>"; 
+		for (var i = 0; i < x; i++) {
+			if (navigator.plugins[i].version == null) {
+				var version = "Unknown"
+			} else {
+				var version = navigator.plugins[i].version
+			}
+			content += "<tr><td>" + navigator.plugins[i].name + "</td><td>" + version + "</td></tr>"; 
 		}
 		content += "</table></p>"
 	}
