@@ -44,13 +44,17 @@ function createPopup() {
     var opened = window.open("");
     opened.document.write("<html><head><title>WhatDevice Report</title><style>body {font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;}</style></head><body>" + createReport("html") + "</body></html>");
     // Inform user how to save file to computer
-    opened.window.alert("To save this to your computer, go to File > Save As in the menu bar.");
+    opened.window.alert("To save this to your computer, press CTRL+S (Windows/Linux) or ⌘+S (Mac) on your keyboard. This may not work in some browsers.");
 }
 
 // Create HTML page with report, then print it
 function createPrintPopup() {
-    var opened = window.open("");
-    opened.document.write("<html><head><title>WhatDevice Report</title><style>body {font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;}</style></head><body onload='window.print(); window.close()'>" + createReport("html") + "</body></html>");
+	var opened = window.open("");
+	opened.document.write("<html><head><title>WhatDevice Report</title><meta name='viewport' content='width=device-width, initial-scale=1'><style>body {font-family: 'Lato','Helvetica Neue',Helvetica,Arial,sans-serif;}</style></head><body>" + createReport("html") + "</body></html>");
+	opened.document.close();
+	opened.focus();
+	opened.print();
+	opened.close();
 }
 
 // Create device report
