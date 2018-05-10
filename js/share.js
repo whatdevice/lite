@@ -34,7 +34,7 @@ function createTwitterLink() {
 		message += ", running " + platform.os;
 	}
 	// Append browser info
-	message += ", with " + platform.name + " " + platform.version + ". See your results at http://what-device.com."
+	message += ", with " + platform.name + " " + platform.version + ". See your results at https://whatdevice.app."
 	// Create links
 	return encodeURIComponent(message);
 }
@@ -63,13 +63,13 @@ function createReport(format) {
 	var n = date.toDateString();
 	var time = date.toLocaleTimeString();
 	// Header
-	var report = "---- WHAT-DEVICE.COM RESULTS ----\nGenerated: " + n + " " + time + "\nNote: This report was generated using WhatDevice Lite.\n\n";
+	var report = "---- WHATDEVICE.APP RESULTS ----\nGenerated: " + n + " " + time + "\nNote: This report was generated using WhatDevice Lite.\n\n";
 	// Device info
 	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\n\n";
 	// Browser info
 	report += "-- BROWSER INFO --\nBrowser: " + platform.name + " " + platform.version + "\nRendering engine: " + platform.layout + "\nCookies enabled: " + navigator.cookieEnabled + "\nUser agent string: " + navigator.userAgent + "\n\n";
 	// Plugin info
-	report += "-- PLUGIN INFO --\n"
+	report += "-- PLUGIN INFO --\n\n"
 	if (navigator.plugins.length == 0) {
 		report += "No plugins were detected.\n"
 	} else {
