@@ -6,9 +6,11 @@ WhatDevice Lite uses components from [Progressive Internet Explorer](https://git
 
 **Browsers that are automatically redirected to WhatDevice Lite:**
 
+* Internet Explorer 8 and below
 * Opera Mini
+* NetFront
+* Netscape Navigator
 * Palm/HP webOS Browser
 * Nintendo DS/DSi Browser
 * Nintendo Wii Browser
-* PlayStation Portable Browser
-* PlayStation Vita Browser
+* PlayStation 3/Vita/Portable Browser
