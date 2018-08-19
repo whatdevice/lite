@@ -65,9 +65,27 @@ function createReport(format) {
 	// Header
 	var report = "---- WHATDEVICE.APP RESULTS ----\nGenerated: " + n + " " + time + "\nNote: This report was generated using WhatDevice Lite.\n\n";
 	// Device info
-	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\n\n";
+	if (navigator.languages) {
+		var language = navigator.languages[0];
+	} else if (navigator.language) {
+		var language = navigator.language;
+	} else if (navigator.userLanguage) {
+		var language = navigator.userLanguage;
+	} else {
+		var language = "Unavailable";
+	}
+	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\nLanguage: " + language + "\n\n";
 	// Browser info
-	report += "-- BROWSER INFO --\nBrowser: " + platform.name + " " + platform.version + "\nRendering engine: " + platform.layout + "\nCookies enabled: " + navigator.cookieEnabled + "\nUser agent string: " + navigator.userAgent + "\n\n";
+	if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+		if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled()) {
+			var dnd = "Enabled"
+		} else {
+			var dnd = "Disabled";
+		}
+	} else {
+		var dnd = "Not supported"
+	}
+	report += "-- BROWSER INFO --\nBrowser: " + platform.name + " " + platform.version + "\nRendering engine: " + platform.layout + "\nCookies enabled: " + navigator.cookieEnabled + "\nDo Not Track: " + dnd + "\nUser agent string: " + navigator.userAgent + "\n\n";
 	// Plugin info
 	report += "-- PLUGIN INFO --\n\n"
 	if (navigator.plugins.length == 0) {

@@ -46,6 +46,8 @@ function printDeviceInfo() {
 		content += "<p><b>Language:</b> " + navigator.languages[0] + "</p>";
 	} else if (navigator.language) {
 		content += "<p><b>Language:</b> " + navigator.language + "</p>";
+	} else if (navigator.userLanguage) {
+		content += "<p><b>Language:</b> " + navigator.userLanguage + "</p>";
 	} else {
 		content += "<p><b>Language:</b> Unavailable</p>";
 	}
@@ -60,8 +62,23 @@ function printBrowserInfo() {
 	content += "<p class='title'>" + platform.name + " " + platform.version + "</p>";
 	// Rendering engine
 	content += "<p><b>Rendering engine:</b> " + platform.layout + "</p>";
-	// Misc
-	content += "<p><b>Cookies enabled:</b> " + navigator.cookieEnabled + "</p>";
+	// Cookies
+	if (navigator.cookieEnabled == true) {
+		content += "<p><b>Cookies:</b> Enabled</p>";
+	} else {
+		content += "<p><b>Cookies:</b> Disabled</p>";
+	}
+	// Do not track
+	if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
+		if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || window.external.msTrackingProtectionEnabled()) {
+			content += "<p><b>Do Not Track:</b> Enabled";
+		} else {
+			content += "<p><b>Do Not Track:</b> Disabled";
+		}
+	} else {
+		content += "<p><b>Do Not Track:</b> Not supported";
+	}
+	// User agent
 	content += "<p><b>User agent:</b> " + navigator.userAgent + "</p>";
 	// Buttons
 	if (platform.name === "Chrome") {
