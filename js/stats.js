@@ -2,6 +2,7 @@
 var isMac = navigator.platform.toUpperCase().indexOf('MAC')>=0;
 var isAndroid = navigator.userAgent.toUpperCase().indexOf('ANDROID') > -1;
 var isPC = ((navigator.userAgent.toUpperCase().indexOf('WINDOWS') > -1) || (navigator.userAgent.toUpperCase().indexOf('LINUX') > -1));
+var isChromebook = navigator.userAgent.toUpperCase().indexOf('CROS') > -1;
 
 // Device info
 function printDeviceInfo() {
@@ -19,6 +20,8 @@ function printDeviceInfo() {
 		content += "<p class='title'>" + platform.product + "</p>";
 	} else if (isAndroid) {
 		content += "<p class='title'>Unknown Android device</p>"
+	} else if (isChromebook) {
+		content += "<p class='title'>Unknown Chromebook</p>"
 	} else {
 		// Determine if running a Mac
 		if (isMac) {
