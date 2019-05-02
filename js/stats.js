@@ -69,19 +69,8 @@ function printBrowserInfo() {
 		content += "<p><b>Cookies:</b> Disabled</p>";
 	}
 	// Do not track
-	function ieTrackingEnabled() {
-		if (platform.name === "IE") {
-			try {
-				return window.external.msTrackingProtectionEnabled();
-			} catch(err) {
-				return false;
-			}
-		} else {
-			return false;
-		}
-	}
-	if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack || 'msTrackingProtectionEnabled' in window.external) {
-		if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1" || ieTrackingEnabled()) {
+	if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack) {
+		if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1") {
 			content += "<p><b>Do Not Track:</b> Enabled";
 		} else {
 			content += "<p><b>Do Not Track:</b> Disabled";
