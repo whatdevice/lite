@@ -41,6 +41,14 @@ function printDeviceInfo() {
 	} else {
 		content += "<p><b>Operating system: </b> Unknown</p>";
 	}
+	// CPU architecture
+	if (window.navigator.platform) {
+		content += "<p><b>Architecture: </b> " + window.navigator.platform.split(" ").splice(-1) + "</p>";
+	} else if (window.navigator.cpuClass) {
+		content += "<p><b>Architecture: </b> " + window.navigator.cpuClass + "</p>";
+	} else {
+		content += "<p><b>Architecture: </b> Unknown</p>";
+	}
 	// Language
 	if (navigator.languages) {
 		content += "<p><b>Language:</b> " + navigator.languages[0] + "</p>";

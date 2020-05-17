@@ -74,7 +74,15 @@ function createReport(format) {
 	} else {
 		var language = "Unavailable";
 	}
-	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\nLanguage: " + language + "\n\n";
+	report += "-- DEVICE INFO --\nManufacturer: " + platform.manufacturer + "\nProduct: " + platform.product + "\nOperating system: " + platform.os + "\nLanguage: " + language;
+	if (window.navigator.platform) {
+		report += "\nArchitecture: " + window.navigator.platform.split(" ").splice(-1);
+	} else if (window.navigator.cpuClass) {
+		report += "\nArchitecture: " + window.navigator.cpuClass;
+	} else {
+		report += "\nArchitecture: Unknown";
+	}
+	report += "\n\n"
 	// Browser info
 	if (window.doNotTrack || navigator.doNotTrack || navigator.msDoNotTrack) {
 		if (window.doNotTrack == "1" || navigator.doNotTrack == "yes" || navigator.doNotTrack == "1" || navigator.msDoNotTrack == "1") {
